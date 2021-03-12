@@ -1,24 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import Bygoogle from './components/ByGoogle';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+//import { Route, Router, Switch } from 'react-router-dom';
+import { Inicio } from './components/Inicio';
+import { Login } from './components/Login';
+import { Registro } from './components/Registro';
+import { Navbar } from './components/Navbar';
+import { Recuperar } from './components/Recuperar';
+import {aboutUs} from './components/aboutUs'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <Navbar/>
+    
+      <div className = 'container p-2'>
+
+        <Switch>
+          <Route path = '/Registro' component = {Registro} />
+          <Route path = "/Inicio" component = {Inicio} />  
+          <Route path = "/Recuperar" component = {Recuperar} />  
+          <Route path = "/Login" component = {Login} />  
+          <Route path = '/' component = {aboutUs} />
+
+          
+        </Switch>    
+
+      </div>
+      <Bygoogle />
+    </Router>
   );
 }
 

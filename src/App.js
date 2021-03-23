@@ -9,6 +9,7 @@ import { Registro } from './components/Registro';
 import { Navbar } from './components/Navbar';
 import { Recuperar } from './components/Recuperar';
 import {aboutUs} from './components/aboutUs'
+import {chat} from './components/chat'
 
 function App() {
   return (
@@ -20,10 +21,12 @@ function App() {
 
         <Switch>
           <Route path = '/Registro' component = {Registro} />
+          <Route path = '/chat' component = {chat} />
           <Route path = "/Inicio" component = {Inicio} />  
           <Route path = "/Recuperar" component = {Recuperar} />  
           <Route path = "/Login" component = {Login} />  
           <Route path = '/' component = {aboutUs} />
+          
 
           
         </Switch>    
